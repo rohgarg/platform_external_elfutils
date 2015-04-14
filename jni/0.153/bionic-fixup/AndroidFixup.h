@@ -51,4 +51,10 @@ static inline void *rawmemchr(const void *s, int c)
 #define fputs_unlocked(x,y) fputs(x,y)
 #define fputc_unlocked(x,y) fputc(x,y)
 
+/* workarounds for string.h */
+extern char *strchrnul(const char *s, int c);
+
+/* workaround for program_invocation_short_name */
+#define program_invocation_short_name "program_invocation_short_name"
+
 #endif /* ANDROID_FIXUP_H */
