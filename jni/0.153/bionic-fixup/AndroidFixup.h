@@ -50,6 +50,11 @@ static inline void *rawmemchr(const void *s, int c)
 /* workarounds for stdio.h */
 #define fputs_unlocked(x,y) fputs(x,y)
 #define fputc_unlocked(x,y) fputc(x,y)
+#define fwrite_unlocked(x,y,z,p) fwrite(x,y,z,p)
+
+/* workarounds for mman.h */
+#define posix_madvise madvise
+#define POSIX_MADV_SEQUENTIAL MADV_SEQUENTIAL
 
 /* workarounds for string.h */
 extern char *strchrnul(const char *s, int c);
