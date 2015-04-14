@@ -64,6 +64,7 @@ LIBEBL_SRC_FILES := \
         eblsectionname.c \
         eblsectionstripp.c \
         eblsectiontypename.c \
+        eblsegmenttypename.c \
         eblshflagscombine.c \
         eblstrtab.c \
         eblsymbolbindingname.c \
