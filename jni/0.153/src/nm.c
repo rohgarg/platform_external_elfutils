@@ -55,6 +55,10 @@
 #include <system.h>
 #include "../libebl/libeblP.h"
 
+#ifdef USE_DEMANGLE
+# undef USE_DEMANGLE
+#endif
+
 
 /* Name and version of program.  */
 static void print_version (FILE *stream, struct argp_state *state);
