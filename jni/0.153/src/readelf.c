@@ -59,6 +59,9 @@
 #include "../libdwfl/libdwflP.h"
 #include "../libdw/memory-access.h"
 
+#ifdef ANDROID
+static char* g_name = "";
+#endif
 
 /* Name and version of program.  */
 static void print_version (FILE *stream, struct argp_state *state);
@@ -4435,9 +4438,17 @@ struct listptr
 #define listptr_address_size(p)	((p)->addr64 ? 8 : 4)
 
 static int
+#ifdef ANDROID
+compare_listptr (const void *a, const void *b)
+#else
 compare_listptr (const void *a, const void *b, void *arg)
+#endif
 {
+#ifdef ANDROID
+  const char *name = g_name;
+#else
   const char *name = arg;
+#endif
   struct listptr *p1 = (void *) a;
   struct listptr *p2 = (void *) b;
 
@@ -4517,9 +4528,17 @@ notice_listptr (enum section_e section, struct listptr_table *table,
 static void
 sort_listptr (struct listptr_table *table, const char *name)
 {
+#ifdef ANDROID
+  g_name = (char*) name;
+#endif
   if (table->n > 0)
+#ifdef ANDROID
+    qsort   (table->table, table->n, sizeof table->table[0],
+	     &compare_listptr);
+#else
     qsort_r (table->table, table->n, sizeof table->table[0],
 	     &compare_listptr, (void *) name);
+#endif
 }
 
 static bool
