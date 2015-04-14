@@ -21,4 +21,7 @@
 #define gettext(x)      (x)
 #define dgettext(x,y)   (y)
 
+#define bindtextdomain(x,y) ({})
+#define textdomain(x) ({})
+
 #endif /* ELFUTILS_LIBINTL_H */
