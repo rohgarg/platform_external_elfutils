@@ -47,4 +47,8 @@ static inline void *rawmemchr(const void *s, int c)
 /* workaround for canonicalize_file_name */
 #define canonicalize_file_name(path) realpath(path, NULL)
 
+/* workarounds for stdio.h */
+#define fputs_unlocked(x,y) fputs(x,y)
+#define fputc_unlocked(x,y) fputc(x,y)
+
 #endif /* ANDROID_FIXUP_H */
