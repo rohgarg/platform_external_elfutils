@@ -91,7 +91,7 @@ LOCAL_CLANG := false
 
 LOCAL_MODULE:= libebl
 
-include $(BUILD_HOST_STATIC_LIBRARY)
+# include $(BUILD_HOST_STATIC_LIBRARY)
 
 #
 # target libebl

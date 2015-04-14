@@ -154,7 +154,7 @@ LOCAL_CFLAGS += -Wno-pointer-arith
 
 LOCAL_MODULE:= libdw
 
-include $(BUILD_HOST_STATIC_LIBRARY)
+# include $(BUILD_HOST_STATIC_LIBRARY)
 
 #
 # target libdw

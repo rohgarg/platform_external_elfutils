@@ -75,7 +75,7 @@ LOCAL_CFLAGS += -include $(LOCAL_PATH)/../host-$(HOST_OS)-fixup/AndroidFixup.h
 
 LOCAL_MODULE:= libdwfl
 
-include $(BUILD_HOST_STATIC_LIBRARY)
+# include $(BUILD_HOST_STATIC_LIBRARY)
 
 #
 # target libdwfl
