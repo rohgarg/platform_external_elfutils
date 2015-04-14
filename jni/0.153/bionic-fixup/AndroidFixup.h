@@ -57,4 +57,6 @@ extern char *strchrnul(const char *s, int c);
 /* workaround for program_invocation_short_name */
 #define program_invocation_short_name "program_invocation_short_name"
 
+#define error_message_count 0
+
 #endif /* ANDROID_FIXUP_H */
