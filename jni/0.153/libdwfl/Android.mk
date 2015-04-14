@@ -26,12 +26,16 @@ ifdef cur_platform
 include $(CLEAR_VARS)
 
 LIBDWFL_SRC_FILES := \
+	derelocate.c \
 	dwfl_begin.c \
 	dwfl_build_id_find_elf.c \
 	dwfl_build_id_find_debuginfo.c \
 	dwfl_end.c \
 	dwfl_error.c \
+	dwfl_getmodules.c \
 	dwfl_module.c \
+	dwfl_module_getelf.c \
+	dwfl_module_info.c \
 	dwfl_module_addrdie.c \
 	dwfl_module_addrsym.c \
 	dwfl_module_build_id.c \
